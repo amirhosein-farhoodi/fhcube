@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk grep *)",
+      "Bash(curl -sf http://localhost:3000)",
+      "Bash(Get-ChildItem -Path \"j:\\\\projects\\\\fh-portfolio\\\\fh-portfolio\\\\public\" -Recurse -Filter \"*.png\" -o \"*.jpg\" -o \"*.jpeg\" -o \"*.svg\" -o \"*.gif\" -o \"*.webp\")",
+      "Bash(Select-Object FullName)",
+      "Read(//j/projects/fh-portfolio/portfolio-inner-site/**)",
+      "Bash(rtk find *)",
+      "Bash(cp j:/projects/fh-portfolio/portfolio-inner-site/public/doom.jsdos j:/projects/fh-portfolio/fh-portfolio/public/doom.jsdos)",
+      "Bash(cp -r j:/projects/fh-portfolio/portfolio-inner-site/public/js-dos j:/projects/fh-portfolio/fh-portfolio/public/js-dos)",
+      "Bash(rtk tsc *)",
+      "Bash(mkdir -p \"j:/projects/fh-portfolio/fh-portfolio-inner/src/laptop-os/apps\" \"j:/projects/fh-portfolio/fh-portfolio-inner/public\")",
+      "PowerShell($src = \"j:\\\\projects\\\\fh-portfolio\\\\fh-portfolio\\\\public\"; $dst = \"j:\\\\projects\\\\fh-portfolio\\\\fh-portfolio-inner\\\\public\"; Copy-Item -Path \"$src\\\\Images\\\\LaptopFrame\" -Destination \"$dst\\\\Images\\\\LaptopFrame\" -Recurse -Force; Copy-Item -Path \"$src\\\\js-dos\" -Destination \"$dst\\\\js-dos\" -Recurse -Force; Copy-Item -Path \"$src\\\\files\" -Destination \"$dst\\\\files\" -Recurse -Force; Copy-Item -Path \"$src\\\\doom.jsdos\" -Destination \"$dst\\\\doom.jsdos\" -Force; Get-ChildItem $dst -Recurse | Measure-Object -Property Length -Sum | Select-Object Count, @{N='SizeMB';E={[math]::Round\\($_.Sum/1MB,1\\)}})",
+      "Bash(rtk git *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(xxd)",
+      "Bash(python3 -)",
+      "Bash(node -)",
+      "Bash(rtk ls *)",
+      "Bash(exit 1)",
+      "Bash(rm -rf \"Models/Chair\" \"Models/Speaker\" \"Models/Desk\" \"Models/Computer\" \"Models/OfficeDesk\" \"Models/Plaent\" \"Models/Pet/topol#0004_idle\")",
+      "Bash(mv Models-v2/__TRACKED_VAR__ Models/__TRACKED_VAR__)",
+      "Bash(rm -f \"Models/FlowerPot/flowerd-pot.glb\")",
+      "Bash(rm -rf \"Models-v2\")",
+      "Bash(node -e ' *)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 30; \"exit: $LASTEXITCODE\")",
+      "Bash(git rm *)",
+      "Bash(rm scripts/strip-comments.mjs)",
+      "Bash(rmdir scripts *)",
+      "Bash(git mv *)",
+      "Bash(rtk wc *)"
+    ],
+    "additionalDirectories": [
+      "j:\\projects\\fh-portfolio\\fh-portfolio-inner\\src\\laptop-os",
+      "j:\\projects\\fh-portfolio\\fh-portfolio-inner"
+    ]
+  }
+}

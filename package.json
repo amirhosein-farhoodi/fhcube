@@ -1,0 +1,24 @@
+{
+  "name": "fh-portfolio-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Root workspace that runs the FH 3D portfolio shell (fh-portfolio) and its embedded laptop-OS inner app (fh-portfolio-inner) together.",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names \"shell,inner\" --prefix-colors \"cyan,magenta\" \"npm run dev:shell\" \"npm run dev:inner\"",
+    "dev:shell": "npm --prefix ./fh-portfolio run dev",
+    "dev:inner": "npm --prefix ./fh-portfolio-inner run dev",
+    "build": "npm run build:inner && npm run build:stitch && npm run build:shell",
+    "build:inner": "npm --prefix ./fh-portfolio-inner run build -- --base=/inner/",
+    "build:stitch": "node ./scripts/stitch-inner.mjs",
+    "build:shell": "npm --prefix ./fh-portfolio run build:shell",
+    "start": "npm run start:shell",
+    "start:shell": "npm --prefix ./fh-portfolio run start",
+    "lint": "concurrently --names \"shell,inner\" --prefix-colors \"cyan,magenta\" \"npm run lint:shell\" \"npm run lint:inner\"",
+    "lint:shell": "npm --prefix ./fh-portfolio run lint",
+    "lint:inner": "npm --prefix ./fh-portfolio-inner run lint",
+    "install:all": "npm install && npm --prefix ./fh-portfolio install && npm --prefix ./fh-portfolio-inner install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
