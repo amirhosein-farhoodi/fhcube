@@ -2,8 +2,8 @@ const NAME = "Amirhosein Farhoodi";
 const EMAIL = "farhoodiamirhosein.primary@gmail.com";
 const PHONE = "+989198957843";
 const PHONE_DISPLAY = "+98 919 895 7843";
-const GITHUB_URL = "https://github.com/amirhose1n";
-const GITHUB_LABEL = "github.com/amirhose1n";
+const GITHUB_URL = "https://github.com/amirhosein-farhoodi";
+const GITHUB_LABEL = "github.com/amirhosein-farhoodi";
 
 const ACCENT = "#2b88d8";
 
