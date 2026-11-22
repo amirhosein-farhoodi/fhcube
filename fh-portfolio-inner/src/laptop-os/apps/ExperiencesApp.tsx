@@ -7,6 +7,10 @@ interface Experience {
   url: string;
   host: string;
   icon?: string;
+  /** Background behind a logo whose artwork is white on transparent. */
+  plate?: string;
+  /** Small status label, e.g. for a project that is not finished yet. */
+  tag?: string;
 }
 
 const EXPERIENCES: Experience[] = [
@@ -29,7 +33,7 @@ const EXPERIENCES: Experience[] = [
     name: "Orchid Pharmed",
     url: "https://orchidpharmed.com/",
     host: "orchidpharmed.com",
-    icon: asset("Images/Expirences/orchid.png"),
+    icon: asset("Images/Expirences/Orchid.png"),
   },
   {
     id: "lawmingo",
@@ -58,6 +62,45 @@ const PERSONAL_PROJECTS: Experience[] = [
     name: "FH Cube",
     url: "https://fhcube.netlify.app",
     host: "fhcube.netlify.app",
+    icon: asset("Images/Expirences/fhcube.png"),
+    plate: "#2a1160",
+  },
+  {
+    id: "fhenglish",
+    name: "FH English",
+    url: "https://fhenglish.netlify.app",
+    host: "fhenglish.netlify.app",
+    icon: asset("Images/Expirences/fhenglish.png"),
+    plate: "#2a1160",
+  },
+  {
+    id: "fhgym",
+    name: "FH Gym Assistant",
+    url: "https://fhgymassistant.netlify.app",
+    host: "fhgymassistant.netlify.app",
+    icon: asset("Images/Expirences/fhgym.png"),
+  },
+  {
+    id: "fhmusic",
+    name: "FH Music",
+    url: "https://fhmusic.netlify.app",
+    host: "fhmusic.netlify.app",
+    icon: asset("Images/Expirences/fhmusic.svg"),
+  },
+  {
+    id: "fhsimplefood",
+    name: "FH Simple Food",
+    url: "https://fhsimplefoods.netlify.app",
+    host: "fhsimplefoods.netlify.app",
+    icon: asset("Images/Expirences/fhsimplefood.png"),
+    tag: "In progress",
+  },
+  {
+    id: "fhlinks",
+    name: "FH Links",
+    url: "https://fhlinks.netlify.app",
+    host: "fhlinks.netlify.app",
+    icon: asset("Images/Expirences/fhlinks.png"),
   },
 ];
 
@@ -100,6 +143,11 @@ function IconImg({ exp, size }: { exp: Experience; size: number }) {
         objectFit: "contain",
         borderRadius: size * 0.18,
         flexShrink: 0,
+        ...(exp.plate && {
+          background: exp.plate,
+          padding: size * 0.12,
+          boxSizing: "border-box",
+        }),
       }}
     />
   );
@@ -359,6 +407,24 @@ function ProjectSection({
               <div style={{ fontSize: 12, color: "#5f6368", marginTop: 2 }}>
                 {exp.host}
               </div>
+              {exp.tag && (
+                <div
+                  title="Not finished yet: an early idea, not demo-ready"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 8,
+                    padding: "2px 8px",
+                    borderRadius: 99,
+                    background: "#fff4e5",
+                    border: "1px solid #f5c98b",
+                    color: "#a15c07",
+                    fontSize: 11,
+                    fontWeight: 600,
+                  }}
+                >
+                  {exp.tag}
+                </div>
+              )}
             </div>
           </button>
         ))}
